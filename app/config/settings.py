@@ -44,6 +44,7 @@ class Settings(BaseSettings):
     cors_origins: str = "*"
 
     # Setup the Postgresql database.
+    db_engine: str = "postgresql+asyncpg"
     db_user: str = "my_db_username"
     db_password: str = "Sup3rS3cr3tP455w0rd"  # noqa: S105
     db_address: str = "localhost"
@@ -95,7 +96,7 @@ class Settings(BaseSettings):
 
     # gatekeeper settings!
     # this is to ensure that people read the damn instructions and changelogs
-    i_read_the_damn_docs: bool = False
+    i_read_the_damn_docs: bool = True
 
     @field_validator("api_root")
     @classmethod

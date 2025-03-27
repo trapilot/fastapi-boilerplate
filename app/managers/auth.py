@@ -224,7 +224,7 @@ class AuthManager:
         email.template_send(
             background_tasks,
             EmailTemplateSchema(
-                recipients=[EmailStr(user_data.email)],
+                recipients=[EmailStr(user_data.email)], # type: ignore
                 subject=f"Welcome to {get_settings().api_title}!",
                 body={
                     "application": f"{get_settings().api_title}",

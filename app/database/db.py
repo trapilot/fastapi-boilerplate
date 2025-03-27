@@ -31,7 +31,7 @@ def get_database_url(*, use_test_db: bool = False) -> str:
     db_name = settings.test_db_name if use_test_db else settings.db_name
 
     return (
-        "postgresql+asyncpg://"
+        f"{settings.db_engine}://"
         f"{settings.db_user}:{settings.db_password}@"
         f"{settings.db_address}:{settings.db_port}/"
         f"{db_name}"
